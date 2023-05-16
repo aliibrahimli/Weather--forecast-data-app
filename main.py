@@ -14,8 +14,8 @@ if place:
     filtered_data = get_data(place, days)
 
     if option == "Temperature":
-        temperatures = [dict["main"]["temp"] for dict in filtered_data]
-        dates = [dict["dt_txt"] for dict in filtered_data]
+        temperatures = [dict1["main"]["temp"] for dict1 in filtered_data]
+        dates = [dict2["dt_txt"] for dict2 in filtered_data]
         figure = px.line(x=dates , y=temperatures, labels={"x": "Date", "y": "Temperature (C)"})
         st.plotly_chart(figure)
     if option == "Sky":
